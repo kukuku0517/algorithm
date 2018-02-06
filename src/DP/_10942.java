@@ -25,16 +25,12 @@ public class _10942 {
     }
 
     public static int isPenlindromeDynamic( int s, int e) {
-
         if (result[s][e] != 0) {
             return result[s][e];
         }
-
         if (s == e) {
             return 1;
         }
-
-
         if (s + 1 == e) {
             if (a[s] == a[e]) {
                 return 1;
@@ -42,7 +38,6 @@ public class _10942 {
                 return 2;
             }
         }
-
         if (a[s] == a[e] ) {
             return result[s][e]=isPenlindromeDynamic(s+1,e-1);
         } else {
