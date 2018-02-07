@@ -24,7 +24,6 @@ public class _2294 {
                         cases[j] = cases[j - val[i]] + 1;
                     }
                 }
-
             }
         }
 
