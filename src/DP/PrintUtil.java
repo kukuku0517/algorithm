@@ -9,4 +9,14 @@ public class PrintUtil {
             System.out.println();
         }
     }
+
+    public static void print1D(int[] a){
+
+            for(int j:a){
+                System.out.printf("%d ",j);
+            }
+            System.out.println();
+    }
+
+
 }
