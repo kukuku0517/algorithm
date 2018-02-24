@@ -9,60 +9,35 @@ public class _11723 {
         Scanner scan = new Scanner(System.in);
         int cmds = scan.nextInt();
         String cmd;
-        int item;
+        StringBuilder builder = new StringBuilder();
         while (cmds > 0) {
             cmds--;
             cmd = scan.next();
             switch (cmd) {
                 case "all":
-                    all();
+                    set = (1 << 21) - 1;
                     break;
                 case "empty":
-                    empty();
+                    set = 0;
                     break;
                 case "add":
-                    item = scan.nextInt();
-                    add(item);
+                    set = set + (1 << scan.nextInt());
                     break;
                 case "remove":
-                    item = scan.nextInt();
-                    remove(item);
+                    set = set - (1 << scan.nextInt());
                     break;
                 case "check":
-                    item = scan.nextInt();
-                    check(item);
+                    int temp = set & (1 << scan.nextInt());
+                    if (temp == 0) builder.append("0\n");
+                    else  builder.append("1\n");
                     break;
                 case "toggle":
-                    item = scan.nextInt();
-                    toggle(item);
+                    set = set ^ (1 << scan.nextInt());
                     break;
             }
         }
+        System.out.println(builder.toString());
     }
 
-    static void add(int x) {
-        set = set + (1 << x);
-    }
 
-    static void remove(int x) {
-        set = set - (1 << x);
-    }
-
-    static void check(int x) {
-        int temp = set & (1 << x);
-        if (temp > 0) System.out.println(1);
-        else System.out.println(0);
-    }
-
-    static void toggle(int x) {
-        set = set ^ (1 << x);
-    }
-
-    static void all() {
-        set = (1<<20)-1;
-    }
-
-    static void empty() {
-        set = 0;
-    }
 }
