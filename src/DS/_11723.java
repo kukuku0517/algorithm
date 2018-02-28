@@ -9,6 +9,7 @@ public class _11723 {
         Scanner scan = new Scanner(System.in);
         int cmds = scan.nextInt();
         String cmd;
+
         StringBuilder builder = new StringBuilder();
         while (cmds > 0) {
             cmds--;
